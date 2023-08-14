@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block main %}
+  <div>
+  <h1 id="midCol">RESULT</h1>
+  <table>
+    <tr>
+        <th>Investment Name</th>
+        <th>Rate of Return<br><small>(%)</small></th>
+        <th>Risk<br><small>(%)</small></th>
+        <th>Min Allocation<br><small>(%)</small></th>
+        <th>Max Allocation<br><small>(%)</small></th>
+        <th>Allocation<br><small>(%)</small></th>
+        <th>Allocation Amount<br><small>(₱)</small></th>
+        <th>Portfolio Return<br><small>(%)</small></th>
+        <th>Estimated Return<br><small>(₱)</small></th>
+      </tr>
+      {% for i in range(rows) %}
+      <tr>
+        <td>{{investments[i]}}</td>
+          {% for j in range(columns) %}
+            <td>{{data[i][j]}}</td>
+          {% endfor %}
+        <td>{{values[i]}}</td>
+        <td bgcolor="5c9df1">{{allocAmnt[i]}}</td>
+        <td>{{portfolioRet[i]}}</td>
+        <td bgcolor="5c9df1">{{estRet[i]}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="5">TOTAL</td>
+        <td>{{sumValues}}</td>
+        <td bgcolor="#014f86" style="color: #FFF;">{{sumAlloc}}</td>
+        <td>{{sumPort}}</td>
+        <td bgcolor="#014f86" style="color: #FFF;">{{sumRet}}</td>
+      </tr>
+  </table>
+  </div>
+  {% endblock %}

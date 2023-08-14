@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="column">
+    <div class="overlay__inner">
+        <h3 class="overlay__title">Number of Investments:</h3>
+        <form action="/" method="post" id="form1">
+            <div class="oneRow">
+                <input type="number" name="rows" maxlength="10">
+                <div class="overlay__btns">
+                    <button type="submit" form="form1" value="submit" class="overlay__btn btn__gradient overlay__btn--colors">Create Table</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  <div class="column">
+    <p class="overlay__description">
+        Portfolio optimization is like crafting a money mix of investments (like crypto, stocks, and bonds) to make the most profit without going too risky. The simplex algorithm is the smart tool that figures out how much to put where, aiming for the best money-growing outcome while being sensible about it
+        <strong>– a bit like solving a puzzle for your wallet.</strong>
+    </p>
+  </div>
+</div>
+{% endblock %}
